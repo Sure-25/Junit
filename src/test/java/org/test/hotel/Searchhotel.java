@@ -1,8 +1,7 @@
 package org.test.hotel;
 
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindAll;
-import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.WebElement; 
+import org.openqa.selenium.support.FindBy; 
 import org.openqa.selenium.support.PageFactory;
 
 public class Searchhotel extends Baseclass {
@@ -10,13 +9,8 @@ public class Searchhotel extends Baseclass {
 	public Searchhotel() {
 		PageFactory.initElements(driver, this);
 	}
-	
 	 
-	@FindAll({
-		@FindBy(id="location"),
-		@FindBy(xpath="(//select[@class='search_combobox'])[1]"),
-		@FindBy(name="location")
-	})
+	@FindBy(xpath="//select[@id='location']")
 	private WebElement location;
 	@FindBy(id="hotels")
 	private WebElement hotel;
@@ -33,7 +27,7 @@ public class Searchhotel extends Baseclass {
 	 
 	public WebElement getLocation() {
 		return location;
-	}
+     }
 	public WebElement getHotel() {
 		return hotel;
 	}
